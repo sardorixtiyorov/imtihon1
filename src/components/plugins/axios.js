@@ -10,7 +10,12 @@ http.interceptors.request.use(
       config.headers["Authorization"] = `Bearer ${token}`;
     }
     config.headers["Language"] = localStorage.getItem("lang");
-    config.headers["Access-Control-Allow-Origin"] = "*";
+    config.headers['Access-Control-Allow-Origin']= '*';
+
+    config.headers['Access-Control-Allow-Methods']= POST, PUT, PATCH, GET, DELETE, OPTIONS
+    
+    config.headers['Access-Control-Allow-Headers']= '*'
+    
     return config;
   },
   (err) => Promise.reject(err)
