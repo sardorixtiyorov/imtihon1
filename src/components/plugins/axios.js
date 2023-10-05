@@ -11,7 +11,9 @@ http.interceptors.request.use(
     }
     config.headers["Language"] = localStorage.getItem("lang");
     config.headers['Access-Control-Allow-Origin']= '*';
-
+    config.headers['Access-Control-Allow-Headers']="X-Api-KEY, Origin, X-Request_With, Content-Type, Accept,Access-Control-Request-Method";
+    config.headers['Access-Control-Allow-Methods']='GET,POST,OPTIONS,PUT,DELETE';
+    config.headers['Allow']='GET,POST,OPTIONS,PUT,DELETE';
     
     
     return config;
